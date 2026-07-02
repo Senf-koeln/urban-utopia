@@ -1,0 +1,64 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.0/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!!**/dist",
+      "!!**/build",
+      "!!**/.netlify",
+      "!!cloudFunctions/functions/lib",
+      "!apps/*/public"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedKeys": "off",
+        "useSortedAttributes": "off"
+      }
+    }
+  },
+  "linter": {
+    "domains": {
+      "react": "recommended"
+    },
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": {
+        "useAwait": "warn",
+        "noDuplicateProperties": "error",
+        "noUnknownAtRules": "off",
+        "noUndeclaredEnvVars": "off"
+      },
+      "correctness": {
+        "noReactPropAssignments": "error",
+        "useExhaustiveDependencies": "off"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "warn",
+        "noSvgWithoutTitle": "off"
+      },
+      "security": {
+        "noSecrets": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  }
+}

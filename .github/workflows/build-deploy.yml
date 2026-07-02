@@ -1,0 +1,164 @@
+name: Build & Deploy
+
+# Builds urban-utopia on push to `staging` or `main`.
+# Pushes to GHCR, then triggers Coolify to pull + restart.
+
+on:
+  push:
+    branches: [staging, main]
+
+concurrency:
+  group: build-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+  actions: write
+
+jobs:
+  build:
+    name: Build & deploy urban-utopia
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Resolve env and image tags
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            APP_ENV=production
+            echo "VITE_APP_MODE=production" >> "$GITHUB_ENV"
+          else
+            APP_ENV=staging
+            echo "VITE_APP_MODE=staging" >> "$GITHUB_ENV"
+          fi
+          echo "APP_ENV=${APP_ENV}" >> "$GITHUB_ENV"
+          echo "APP_VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
+          owner="$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')"
+          image="ghcr.io/${owner}/urban-utopia"
+          lock_hash='${{ hashFiles('yarn.lock') }}'
+          echo "IMAGE=${image}" >> "$GITHUB_ENV"
+          echo "LOCK_HASH=${lock_hash}" >> "$GITHUB_ENV"
+          scope="urban-utopia-${APP_ENV}-${lock_hash}"
+          echo "CACHE_FROM=type=gha,scope=${scope}" >> "$GITHUB_ENV"
+          echo "CACHE_TO=type=gha,mode=max,scope=${scope}" >> "$GITHUB_ENV"
+
+      - name: Stabilize Docker dependency manifest
+        run: |
+          node -e 'const fs = require("node:fs"); const pkg = JSON.parse(fs.readFileSync("package.json", "utf8")); delete pkg.version; fs.writeFileSync("package.json", JSON.stringify(pkg, null, 2) + "\n");'
+
+      - name: Verify dotenv decryption keys
+        env:
+          APP_ENV: ${{ env.APP_ENV }}
+          DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
+          DOTENV_PRIVATE_KEY_PROD: ${{ secrets.DOTENV_PRIVATE_KEY_PROD }}
+        run: |
+          node scripts/write-docker-env-keys.cjs
+          node scripts/verify-docker-dotenv-key.cjs
+          rm -f .env.keys
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          platforms: linux/amd64
+          provenance: false
+          tags: |
+            ${{ env.IMAGE }}:${{ env.APP_ENV }}
+            ${{ env.IMAGE }}:${{ env.APP_ENV }}-${{ github.sha }}
+          build-args: |
+            APP_ENV=${{ env.APP_ENV }}
+            APP_VERSION=${{ env.APP_VERSION }}
+            VITE_APP_MODE=${{ env.VITE_APP_MODE }}
+            DOTENV_PRIVATE_KEY=${{ secrets.DOTENV_PRIVATE_KEY }}
+            DOTENV_PRIVATE_KEY_PROD=${{ secrets.DOTENV_PRIVATE_KEY_PROD }}
+          cache-from: ${{ env.CACHE_FROM }}
+          cache-to: ${{ env.CACHE_TO }}
+
+      - name: Deploy to Coolify and wait for result
+        env:
+          COOLIFY_TOKEN_API: ${{ secrets.COOLIFY_TOKEN_API }}
+          UTOPIA_STAGING: ${{ secrets.COOLIFY_WEBHOOK_UTOPIA_STAGING }}
+          UTOPIA_PRODUCTION: ${{ secrets.COOLIFY_WEBHOOK_UTOPIA_PRODUCTION }}
+        run: |
+          set -euo pipefail
+          case "${APP_ENV}" in
+            staging)    HOOK="$UTOPIA_STAGING" ;;
+            production) HOOK="$UTOPIA_PRODUCTION" ;;
+            *)          HOOK="" ;;
+          esac
+          if [ -z "${HOOK:-}" ]; then
+            echo "No Coolify webhook configured for ${APP_ENV}; skipping deploy trigger."
+            exit 0
+          fi
+
+          http_response="$(curl --silent --show-error --write-out $'\n%{http_code}' --request GET "$HOOK" \
+            --header "Authorization: Bearer $COOLIFY_TOKEN_API")" || {
+              echo "::error::Could not reach Coolify deploy endpoint."
+              exit 1
+            }
+          http_code="$(printf '%s' "$http_response" | tail -n1)"
+          response="$(printf '%s' "$http_response" | sed '$d')"
+          echo "Coolify deploy response (HTTP $http_code): $response"
+          if [ "$http_code" != "200" ]; then
+            echo "::error::Coolify deploy trigger returned HTTP $http_code: $response"
+            exit 1
+          fi
+
+          uuids="$(printf '%s' "$response" | jq -r '.deployments[]?.deployment_uuid // empty')"
+          if [ -z "$uuids" ]; then
+            echo "::error::Coolify returned no deployment_uuid."
+            exit 1
+          fi
+
+          base="$(printf '%s' "$HOOK" | sed -E 's#(https?://[^/]+).*#\1#')"
+          timeout_s=1200
+          interval_s=10
+
+          for uuid in $uuids; do
+            echo "Waiting for Coolify deployment $uuid (timeout ${timeout_s}s)..."
+            elapsed=0
+            while true; do
+              http_response="$(curl --silent --show-error --write-out $'\n%{http_code}' \
+                --header "Authorization: Bearer $COOLIFY_TOKEN_API" \
+                "$base/api/v1/deployments/$uuid")" || {
+                  echo "::error::Could not reach Coolify status API."
+                  exit 1
+                }
+              http_code="$(printf '%s' "$http_response" | tail -n1)"
+              body="$(printf '%s' "$http_response" | sed '$d')"
+              if [ "$http_code" != "200" ]; then
+                echo "::error::Coolify status API returned HTTP $http_code: $body"
+                exit 1
+              fi
+              status="$(printf '%s' "$body" | jq -r '.status // "unknown"')"
+              echo "  [${elapsed}s] $uuid -> $status"
+              case "$status" in
+                *finished*|*success*)
+                  echo "  Deployment $uuid succeeded."
+                  break ;;
+                *failed*|*error*|*cancel*)
+                  echo "::error::Coolify deployment $uuid failed (status: $status)."
+                  exit 1 ;;
+              esac
+              if [ "$elapsed" -ge "$timeout_s" ]; then
+                echo "::error::Timed out waiting for Coolify deployment $uuid."
+                exit 1
+              fi
+              sleep "$interval_s"
+              elapsed=$((elapsed + interval_s))
+            done
+          done

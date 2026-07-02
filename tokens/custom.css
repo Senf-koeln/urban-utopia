@@ -1,0 +1,321 @@
+@tailwind utilities;
+
+@layer utilities {
+  .icon-border {
+    --size: 1px;
+    filter: drop-shadow(
+        var(--size, 1px) 0 0.1px var(--tw-shadow-color, #ffffff80)
+      )
+      drop-shadow(
+        calc(var(--size, 1px) * -1) 0 0.1px var(--tw-shadow-color, #ffffff80)
+      )
+      drop-shadow(0 var(--size, 1px) 0.1px var(--tw-shadow-color, #ffffff80))
+      drop-shadow(
+        0 calc(var(--size, 1px) * -1) 0.1px var(--tw-shadow-color, #ffffff80)
+      );
+  }
+}
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
+html,
+body {
+  @apply bg-background-default text-text-default flex h-full w-full;
+}
+
+/* Typography Styles */
+
+.body-xs {
+  @apply font-sans text-xs font-medium leading-4 tracking-normal no-underline;
+}
+
+.body-xs-bold {
+  @apply font-sans text-xs font-bold leading-4 tracking-normal no-underline;
+}
+
+.body-sm {
+  @apply font-sans text-sm font-medium leading-5 tracking-normal no-underline;
+}
+
+.body-sm-bold {
+  @apply font-sans text-sm font-bold leading-5 tracking-normal no-underline;
+}
+
+.body-sm-underline {
+  @apply font-sans text-sm font-medium leading-5 tracking-normal underline;
+}
+
+.body-md {
+  @apply font-sans text-base font-normal leading-6 tracking-normal no-underline;
+}
+
+.body-md-semibold {
+  @apply font-sans text-base font-semibold leading-6 tracking-normal no-underline;
+}
+
+.body-md-bold {
+  @apply font-sans text-base font-bold leading-6 tracking-normal no-underline;
+}
+
+.body-lg {
+  @apply font-sans text-lg font-medium leading-7 tracking-normal no-underline;
+}
+
+.body-lg-underline {
+  @apply font-sans text-lg font-medium leading-7 tracking-normal underline;
+}
+
+.body-lg-bold {
+  @apply font-sans text-lg font-bold leading-7 tracking-normal no-underline;
+}
+
+.body-xs-bold-narrow {
+  @apply font-sans text-xs font-bold leading-3 tracking-normal no-underline;
+}
+
+.heading-xs {
+  @apply font-sans text-xs font-extrabold leading-4 tracking-normal no-underline;
+}
+
+.heading-sm {
+  @apply font-sans text-sm font-extrabold leading-5 tracking-normal no-underline;
+}
+
+.heading-md {
+  @apply font-sans text-base font-extrabold leading-6 tracking-normal no-underline;
+}
+
+.heading-lg {
+  @apply font-sans text-lg font-extrabold leading-7 tracking-normal no-underline;
+}
+
+.heading-xl {
+  @apply font-sans text-xl font-extrabold leading-7 tracking-normal no-underline;
+}
+
+.heading-2xl {
+  @apply font-sans text-2xl font-extrabold leading-8 tracking-normal no-underline;
+}
+
+.heading-3xl {
+  @apply font-sans text-3xl font-extrabold leading-9 tracking-normal no-underline;
+}
+
+.heading-4xl {
+  @apply font-sans text-4xl font-extrabold leading-10 tracking-normal no-underline;
+}
+
+.heading-5xl {
+  @apply leading-11 font-sans text-5xl font-extrabold tracking-normal no-underline;
+}
+
+.focusable {
+  @apply focus-visible:outline-focused-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px];
+}
+
+.custom-light-shadow {
+  box-shadow:
+    0px -14px 30px -6px hsla(0, 0%, 100%, 0.15),
+    0px 14px 30px -6px hsla(44, 15%, 46%, 0.07);
+}
+
+.mapboxgl-map {
+  font-family: nunito !important;
+}
+
+.cesium-widget-credits {
+  font-family: nunito !important;
+  margin-left: -40px !important;
+  text-shadow: none !important;
+  color: #38332d !important;
+}
+.cesium-widget-credits a {
+  text-shadow: none !important;
+  color: #38332d !important;
+}
+
+/* More specific selectors for Cesium logo/credits */
+.cesium-credit-logoContainer img,
+.cesium-credit-logoContainer svg,
+.cesium-widget-credits img,
+.cesium-widget-credits svg {
+  transform: scale(0.6) translate(40px, 3px) !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Alternative approach - scale the entire credits container */
+.cesium-widget-credits {
+  transform: scale(0.8) !important;
+  transform-origin: bottom left !important;
+}
+
+.checkerboard {
+  background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0px;
+}
+
+/* react-lazy-load-image-component effect="blur" */
+.lazy-load-image-background.blur {
+  filter: blur(15px);
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  filter: blur(0);
+  transition: filter 0.3s;
+}
+
+.lazy-load-image-background.blur > img {
+  opacity: 0;
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded > img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* react-lazy-load-image-component effect="black-and-white" */
+.lazy-load-image-background.black-and-white {
+  filter: grayscale(1);
+}
+
+.lazy-load-image-background.black-and-white.lazy-load-image-loaded {
+  filter: grayscale(0);
+  transition: filter 0.3s;
+}
+
+.lazy-load-image-background.black-and-white > img {
+  opacity: 0;
+}
+
+.lazy-load-image-background.black-and-white.lazy-load-image-loaded > img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* react-lazy-load-image-component effect="opacity" */
+.lazy-load-image-background.opacity {
+  opacity: 0;
+}
+
+.lazy-load-image-background.opacity.lazy-load-image-loaded {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+@keyframes opacityTranslateYFrom50Animation {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes translateYFrom100toMinus200pxAnimation {
+  0% {
+    /* transform: translateY(100%); */
+    margin-top: 100%;
+  }
+
+  100% {
+    /* transform: translateY(calc(var(--vh, 100vh) - 200px)); */
+    margin-top: 0%;
+  }
+}
+
+@keyframes translateYFrom100to70pxAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(70px);
+  }
+}
+
+@keyframes translateYFrom100to16pxAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(16px);
+  }
+}
+
+@keyframes opacityTranslateYFrom100Animation {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  50% {
+    opacity: 0.1;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes opacityAfter50PercentAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityAndPointerEventsAnimation {
+  0% {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.bg-grid-pattern {
+  --grid-pattern-color: #f0f0f0;
+  --grid-pattern-size: 20px;
+  --grid-pattern-width: 1px;
+  background: linear-gradient(
+      to right,
+      var(--grid-pattern-color) var(--grid-pattern-width),
+      transparent var(--grid-pattern-width)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--grid-pattern-color) var(--grid-pattern-width),
+      transparent var(--grid-pattern-width)
+    );
+  background-repeat: repeat;
+  background-size: var(--grid-pattern-size) var(--grid-pattern-size);
+  background-position: calc(var(--grid-pattern-width) * -0.5)
+    calc(var(--grid-pattern-width) * -0.5);
+}

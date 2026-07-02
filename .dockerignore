@@ -1,0 +1,254 @@
+# .dockerignore — tells Docker what NOT to copy into the build container.
+#
+# Think of it like .gitignore but for Docker builds. When you run
+# "docker build", Docker sends the entire project folder to the Docker
+# daemon as the "build context". Without this file, that includes
+# gigabytes of node_modules, build artifacts, secrets, and editor junk —
+# massively slowing down every build and potentially leaking secrets into
+# the image. This file keeps the build context lean and safe.
+#
+# Rule of thumb: if a file isn't needed to compile or run the app,
+# it shouldn't be in the image.
+
+
+# ── Version control ──────────────────────────────────────────────────────────
+# Git history and CI config have no place inside a production image.
+# .gitattributes controls line endings and diff behavior — only meaningful
+# for git itself, not for a Linux container.
+.git
+.gitignore
+.gitattributes
+.github
+
+
+# ── Node modules ─────────────────────────────────────────────────────────────
+# These get re-installed fresh inside the image by "yarn install".
+# Including them would bloat the build context and potentially bring in
+# binaries compiled for your local OS (macOS) instead of Linux.
+node_modules
+**/node_modules
+
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+# Compiled/bundled output from previous local builds. The Dockerfile
+# runs the build itself — pre-built artifacts from your machine would
+# just get overwritten and waste transfer time.
+# "out/" is another common output dir used by Next.js static export and tsc.
+dist
+**/dist
+build
+**/build
+out
+**/out
+.next
+**/.next
+dev-dist
+**/dev-dist
+
+
+# ── Yarn Berry internal state ─────────────────────────────────────────────────
+# Yarn's local cache and install metadata. The Dockerfile copies
+# .yarn/releases and .yarnrc.yml (needed to run yarn), but not the
+# cache — yarn install --immutable resolves everything from yarn.lock.
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+
+# ── npm cache ─────────────────────────────────────────────────────────────────
+# npm writes a local cache here when running in offline or CI mode.
+# Not needed since the image uses Yarn, but could exist in the monorepo
+# if any tool happened to invoke npm directly.
+**/.npm/
+
+
+# ── Node REPL history ─────────────────────────────────────────────────────────
+# Created when you run `node` interactively in the terminal. Personal
+# command history — no place in a container.
+.node_repl_history
+
+
+# ── Turborepo cache ───────────────────────────────────────────────────────────
+# Turbo stores task results here to skip re-running unchanged work.
+# This cache is local-machine-specific and meaningless inside Docker.
+.turbo
+**/.turbo
+
+
+# ── Vite dev cache ────────────────────────────────────────────────────────────
+# Vite writes a .vite folder next to packages during local dev for
+# dependency pre-bundling. Not needed — Vite rebuilds this in the image.
+**/.vite
+
+
+# ── Netlify CLI cache ─────────────────────────────────────────────────────────
+# Created by the Netlify CLI during local development (e.g. netlify dev).
+# Has nothing to do with the Docker-served production build.
+.netlify
+**/.netlify
+
+
+# ── Storybook ─────────────────────────────────────────────────────────────────
+# Static output from "storybook build". The production image serves the
+# app, not the component library docs.
+storybook-static
+
+
+# ── Environment variables ─────────────────────────────────────────────────────
+# NEVER let plaintext .env files or the private keys (.env.keys) into the
+# build context — they would be baked into the image and leaked.
+.env
+.env.*
+
+# …EXCEPT encrypted app env files. REQUIRED in the build context: Vite decrypts +
+# inlines at build time; senf-client runtime COPYs .env.encrypted + .env.prod.encrypted
+# for SSR. Useless without DOTENV_PRIVATE_KEY / DOTENV_PRIVATE_KEY_PROD
+# from Coolify. Plaintext .env* stay ignored. .env.keys is never re-included.
+!apps/*/.env.encrypted
+!apps/*/.env.prod.encrypted
+!deploy/env/generated/*.encrypted
+
+
+# ── Firebase credentials ──────────────────────────────────────────────────────
+# Service account keys and admin SDK credentials grant full Firebase
+# access. Keep them off the image entirely.
+serviceAccount*.json
+firebase-key*.json
+*-firebase-adminsdk-*.json
+firebase-debug.log
+.firebase
+.firebaserc
+firebase.json
+
+
+# ── Other secrets / keys ──────────────────────────────────────────────────────
+# Belt-and-suspenders catch-all for any private key or certificate files
+# that shouldn't exist in a container image under any circumstances.
+*.key
+*.pem
+secrets/
+credentials/
+.secrets/
+.credentials/
+
+
+# ── IDE and editor config ─────────────────────────────────────────────────────
+# Editor settings, extensions, and swap files. Purely local preferences
+# that mean nothing inside a Linux container.
+.cursor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+
+# ── Operating system noise ────────────────────────────────────────────────────
+# macOS and Windows metadata files created automatically by the OS.
+# Pointless clutter in a Linux container.
+.DS_Store
+._*
+Thumbs.db
+
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+# Runtime logs from previous local sessions. The container generates
+# its own logs at runtime.
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# ── Tests and coverage ────────────────────────────────────────────────────────
+# Test results and coverage reports from local runs. The Dockerfile
+# already sets CYPRESS_INSTALL_BINARY=0 so Cypress is never installed
+# in the image — no point shipping the E2E sources either.
+coverage
+*.lcov
+.nyc_output
+cypress
+cypress.config.ts
+
+
+# ── Terraform ─────────────────────────────────────────────────────────────────
+# Infrastructure-as-code state files. These describe cloud resources,
+# not the app itself, and may contain sensitive resource identifiers.
+*.tfstate
+*.tfstate.*
+.terraform
+.terraform.lock.hcl
+
+
+# ── Cloud Functions compiled output ───────────────────────────────────────────
+# TypeScript compiles into cloudFunctions/functions/lib/ at build time.
+# Narrowly scoped so it doesn't accidentally match source directories
+# named "lib" elsewhere in the monorepo (e.g. apps/senf-utopia/src/lib).
+cloudFunctions/functions/lib
+
+
+# ── Design token generated files ─────────────────────────────────────────────
+# These are generated by "yarn workspace senf-tokens build", which the
+# Dockerfile runs as part of the build. Pre-generated local copies would
+# just be overwritten.
+shared/senf-tokens/output/
+shared/senf-tokens/tailwind.css
+
+
+# ── Dev tooling config ────────────────────────────────────────────────────────
+# Git hooks, Node version pins, release automation, and the Biome
+# linter config. None of these are needed to compile or serve the app.
+.husky
+.nvmrc
+.releaserc.json
+biome.json
+
+
+# ── Firebase deploy and runtime configs ──────────────────────────────────────
+# Firestore rules, storage rules, and Firebase project configs are used
+# by the Firebase CLI to deploy backend resources — not by the static
+# frontend served from this Docker image.
+firebase.default.json
+firebase.us-data.json
+firestore.indexes.json
+firestore.rules
+storage.rules
+gcs-cors-*.json
+
+
+# ── Netlify functions ─────────────────────────────────────────────────────────
+# Edge functions and Netlify-specific serverless functions. This image
+# is served by Caddy, not Netlify — none of this code runs here.
+netlify
+
+
+# ── Docker files themselves ───────────────────────────────────────────────────
+# No reason to COPY the Dockerfile and compose file into the image
+# they're being used to build.
+docker-compose.yaml
+Dockerfile
+
+
+# ── Docs and changelogs ───────────────────────────────────────────────────────
+# Markdown documentation and changelogs. Useful for humans on GitHub,
+# not for a container serving a web app.
+docs
+CHANGELOG.md
+README.md
+*.md
+
+
+# ── Misc local caches ─────────────────────────────────────────────────────────
+# Various tool caches and temporary files that accumulate during local
+# development but have no role in a production build.
+# *.tmp / *.temp catches individual temp files (not just temp/ directories).
+tmp
+temp
+*.tmp
+*.temp
+*.tgz
+.cache
+.parcel-cache
+.eslintcache

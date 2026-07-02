@@ -1,0 +1,89 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.wrapper {
+  --card-height: 95vh;
+  --card-width: calc(var(--card-height) / 1.5);
+  position: relative;
+  padding: 0px;
+  border-radius: 22px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.wrapper::before {
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-radius: 22px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+  z-index: -1;
+  top: -6px;
+  left: -6px;
+}
+
+.wrapper::after {
+  top: calc(var(--card-height) / 18);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+}
+
+.cardWrapper {
+  position: relative;
+  padding: 0px;
+  border-radius: 22px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+  pointer-events: all !important;
+}
+
+.cardWrapper::before {
+  animation: spin 7.5s linear infinite;
+  opacity: 1;
+}
+
+.cardWrapper::after {
+  animation: spin 2.5s linear infinite;
+  opacity: 1;
+}
+
+/* .cardWrapper:hover::before,
+.cardWrapper:hover::after {
+  animation: none;
+  opacity: 0;
+} */
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+} 

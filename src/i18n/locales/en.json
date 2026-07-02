@@ -1,0 +1,286 @@
+{
+  "menu": {
+    "contact": "Contact",
+    "about": "About",
+    "giveFeedback": "Give Feedback",
+    "logout": "Logout",
+    "imprint": "Imprint",
+    "dataPrivacy": "Data privacy"
+  },
+  "errors": {
+    "tryAgainLater": "An error occurred, please try again later or reach out to us.",
+    "opencvLoadFailed": "Failed to load OpenCV. Retrying..."
+  },
+  "loading": {
+    "opencvInitialized": "OpenCV fully initialized"
+  },
+  "iframe": {
+    "feedbackTitle": "Inf0"
+  },
+  "aiGenerator": {
+    "models": {
+      "pedestrianZone": "Pedestrian zone",
+      "cafe": "Cafe",
+      "tree": "Tree",
+      "bicycleLane": "Bicycle lane",
+      "pond": "Pond",
+      "urbanWaterfall": "Urban waterfall",
+      "stonePath": "Stone path",
+      "meadow": "Meadow",
+      "modernBench": "Modern bench",
+      "fleaMarket": "Flea market",
+      "tram": "Tram",
+      "solarPanels": "Solar panels",
+      "playground": "Playground",
+      "removeCars": "Remove cars",
+      "pedestrian": "Pedestrian",
+      "cyclist": "Cyclist",
+      "children": "Children"
+    },
+    "progress": {
+      "steps": {
+        "location": "Location",
+        "idea": "Idea",
+        "area": "Area"
+      }
+    },
+    "ideaInput": {
+      "examples": {
+        "bench": "Modern wooden bench",
+        "landscaping": "Landscaping"
+      },
+      "placeholder": "Enter your idea..."
+    },
+    "accessVerification": {
+      "title": "Login",
+      "subtitle": "Use your personal code to log in",
+      "inputPlaceholder": "Enter your login-code",
+      "verifyButton": "Verify Access",
+      "or": "or",
+      "waitlist": {
+        "success": "Awesome, stay tuned!",
+        "joinTitle": "Join the waitlist",
+        "joinSubtitle": "Get early access to Urban Utopia AI",
+        "emailPlaceholder": "Enter your email",
+        "joinButton": "Join waitlist"
+      }
+    },
+    "library": {
+      "title": "Library",
+      "noResults": "No results found",
+      "loading": "Loading library..."
+    },
+    "imageResponse": {
+      "generating": "Generating your image...",
+      "download": "Download",
+      "regenerate": "Regenerate",
+      "share": "Share",
+      "back": "Back",
+      "retry": "Retry",
+      "continueEdit": "Continue to edit this image",
+      "image": "Image",
+      "firstImage": "This is already the first image",
+      "lastImage": "This is already the last image"
+    },
+    "intro": {
+      "title": "Create your own utopia!",
+      "subtitle": "With this AI tool you can easily change images the way you want.",
+      "readyTitle": "Ready? Then follow these steps:",
+      "mobileText": "The app is currently only available for desktop. Please open the app on a computer.",
+      "steps": {
+        "1": "Choose a starting image.",
+        "2": "Select which new object you want to see.",
+        "3": "Paint or mark the area where the object should appear."
+      }
+    },
+    "imageSelection": {
+      "title": "Select a starting image",
+      "subtitle": "Use streetview to search for the place of your choice or upload a photo.",
+      "uploadButton": "Upload an image",
+      "or": "or",
+      "searchPlaceholder": "Search place"
+    },
+    "objectSelection": {
+      "title": "Choose the object",
+      "subtitle": "Enter a text for your individual idea or select one of the predefined objects.",
+      "or": "or"
+    },
+    "drawingArea": {
+      "title": "Draw the area",
+      "subtitle": "Define the place where the object \"{{object}}\" should be visualized.",
+      "tips": {
+        "title": "Tips:",
+        "tip1": "Always close the drawlines",
+        "tip1Error": "Don't leave the drawline on the edge open",
+        "tip2": "Consider the three dimensions of the object",
+        "tip2Error": "Don't put the object in a too tight space."
+      }
+    },
+    "buttons": {
+      "history": "History",
+      "deleteMask": "Delete mask",
+      "eraser": "Eraser",
+      "draw": "Draw",
+      "start": "Start",
+      "next": "Next",
+      "generateImage": "Generate image",
+      "back": "Back"
+    },
+    "mobileNotice": "This app is currently desktop-only",
+    "credits": "{{remaining}} / {{total}} Credits",
+    "errors": {
+      "noCredits": "Your credits are used up. You would like to have more? Get in touch with us!",
+      "noArea": "You have to draw an outlining area into the image",
+      "noObject": "Please select an object"
+    }
+  },
+  "startImage": {
+    "title": "Choose a starting image for your utopia",
+    "existing": {
+      "title": "Select existing image",
+      "description": "Choose from a pre-existing image"
+    },
+    "streetview": {
+      "title": "Take image with Street View",
+      "description": "Search and capture a location via Street View"
+    },
+    "upload": {
+      "title": "Upload your own image",
+      "description": "Upload your own photo to get started"
+    },
+    "library": {
+      "title": "Image Library",
+      "loading": "Loading library...",
+      "noCaption": "Untitled",
+      "noImages": "No images found"
+    },
+    "errors": {
+      "failedLoadSession": "Failed to load session. Please try again.",
+      "failedProcessImage": "Failed to process the image. Please try again."
+    }
+  },
+  "streetview": {
+    "pageTitle": "Choose a location",
+    "title": "Where do you want to create a utopia?"
+  },
+  "languages": {
+    "de": {
+      "name": "German",
+      "nativeName": "Deutsch"
+    },
+    "en": {
+      "name": "English",
+      "nativeName": "English"
+    }
+  },
+  "util": {
+    "adjust": "Adjust {{val}}"
+  },
+  "global": {
+    "language": "Language"
+  },
+  "aiImageGenerator": {
+    "errors": {
+      "failedSaveImage": "Failed to save image. Please try again.",
+      "generalError": "An error occurred. Please try again.",
+      "failedProcessImage": "Failed to process the image. Please try again.",
+      "failedGenerateImageAfterRetry": "Failed to generate image after retry. Please try again later.",
+      "failedGenerateImage": "Failed to generate image. Please try again later."
+    },
+    "accessVerification": {
+      "incorrectId": "Incorrect ID. Access denied."
+    }
+  },
+  "admin": {
+    "errors": {
+      "failedImportJson": "Failed to import JSON file. Please check the file format."
+    },
+    "pages": {
+      "adminPage": {
+        "title": "All Organizations",
+        "createButton": "New Organization",
+        "noSessions": "No sessions available. Create your first session!",
+        "organizationNotFound": "Organization not found"
+      },
+      "organizationModal": {
+        "title": "Create Organization",
+        "label": "Organization Name",
+        "placeholder": "Enter organization name",
+        "cancelButton": "Cancel",
+        "createButton": "Create",
+        "creatingButton": "Creating..."
+      },
+      "projectsPage": {
+        "title": "Your Sessions",
+        "createButton": "New Session",
+        "noSessions": "No sessions available. Create your first session!"
+      },
+      "projectModal": {
+        "title": "Create Project",
+        "label": "Project Name",
+        "placeholder": "Enter project name",
+        "cancelButton": "Cancel",
+        "createButton": "Create",
+        "creatingButton": "Creating..."
+      },
+      "projectsPageButtons": {
+        "editButton": "Edit",
+        "resultsButton": "Results",
+        "inviteButton": "Invite"
+      },
+      "inviteModal": {
+        "title": "Invitation link for {{projectName}}",
+        "linkLabel": "Invitation link:",
+        "qrCodeLabel": "QR Code",
+        "downloadButton": "Download QR Code",
+        "copyButton": "Copy",
+        "copiedButton": "Copied",
+        "generatingQR": "Generating QR code...",
+        "shareText": "Share this link or scan the QR code to invite others to join {{projectName}}."
+      },
+      "projectPage": {
+        "title": "Edit Session",
+        "titleInputPlaceholder": "Enter title...",
+        "uploadLabel": "Image upload by participants",
+        "streetViewLabel": "Google Street View",
+        "uploading": "Uploading...",
+        "uploadButton": "Click to upload images",
+        "imageCaption": "Image title...",
+        "notFound": "Project not found",
+        "deleteTitle": "Delete project",
+        "deleteDescription": "Are you sure you want to delete this project? This action cannot be undone.",
+        "deleteButton": "Delete",
+        "editButton": "Edit",
+        "saveButton": "Save",
+        "cancelButton": "Cancel"
+      },
+      "resultsPage": {
+        "title": "Created images",
+        "imageCount": "{{count}} images created",
+        "loading": "Loading...",
+        "noImages": "No images created yet...",
+        "originalImage": "Original Image",
+        "notAvailable": "Not available",
+        "play": "Play",
+        "stop": "Stop",
+        "continue": "Continue",
+        "downloadTitle": "Download",
+        "previousTitle": "Previous image",
+        "nextTitle": "Next image"
+      },
+      "components": {
+        "titleEditor": {
+          "editButton": "Edit",
+          "saveButton": "Save",
+          "cancelButton": "Cancel"
+        },
+        "inviteLinkModal": {
+          "title": "Invite Link & QR Code",
+          "linkLabel": "Invite Link",
+          "qrCodeLabel": "QR Code",
+          "downloadButton": "Download QR Code"
+        }
+      }
+    }
+  }
+}

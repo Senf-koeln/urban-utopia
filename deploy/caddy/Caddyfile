@@ -1,0 +1,10 @@
+{
+	email ops@urban-utopia.ai
+}
+
+urban-utopia.ai, www.urban-utopia.ai {
+	@www header_regexp www Host ^www\.(.+)$
+	redir @www https://{re.www.1}{uri} permanent
+
+	reverse_proxy 127.0.0.1:5073
+}

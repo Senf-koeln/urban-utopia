@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "eslint",
+    "typescript",
+    "unicorn",
+    "react",
+    "oxc",
+    "import",
+    //"react-perf", looks like legacy due to react compiler
+    "jsx-a11y",
+    "node",
+    "promise"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn"
+  },
+  "rules": {
+    "eslint/no-underscore-dangle": "off",
+    "oxc/no-map-spread": "off",
+    "promise/no-callback-in-promise": ["warn", { "exceptions": ["next"] }],
+    "eslint/no-unused-vars": "off",
+    "import/no-unassigned-import": "off",
+    "react/react-in-jsx-scope": "off",
+    // Compiler lint owns memo deps (MemoDependencies, react#34394), effects, refs, purity.
+    // exhaustive-deps conflicts with auto-memo ("wrap in useCallback") — keep off.
+    "react/exhaustive-deps": "off",
+    "react/rules-of-hooks": "error",
+    "react/react-compiler": "error"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true
+  },
+  "options": {
+    "typeAware": true,
+    "typeCheck": true,
+    "maxWarnings": 1000000
+  }
+}

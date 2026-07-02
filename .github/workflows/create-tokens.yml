@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches: sync-tokens
+    paths:
+      - "tokens/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: corepack enable
+      - run: yarn install --immutable
+      - run: yarn tokens:build
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Tokens

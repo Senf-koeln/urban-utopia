@@ -1,0 +1,425 @@
+{
+  "common": {
+    "tryNow": "Jetzt ausprobieren",
+    "requestContact": "Anfrage stellen",
+    "sendRequest": "Anfrage senden",
+    "brandName": "Urban Utopia",
+    "workshopTool": "Workshop-Tool"
+  },
+  "nav": {
+    "features": "Funktionen",
+    "how": "Ablauf",
+    "useCases": "Einsatz",
+    "voices": "Stimmen",
+    "showcase": "Beispiele",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "switchToEn": "English",
+    "switchToDe": "Deutsch"
+  },
+  "hero": {
+    "label": "Urban Utopia · Workshop-Tool",
+    "title": "Orte warten",
+    "titleAccent": "auf ihre Vision",
+    "description": "Urban Utopia ist ein digitales Workshop-Tool für alle, die über Stadt und Raum mitdenken: Schulen, Kommunen, Planungsbüros, Vereine und Hochschulen verwandeln Ideen in überzeugende Bilder.",
+    "imageAlt": "Workshop-Teilnehmende visualisieren Ideen für den öffentlichen Raum",
+    "liveLabel": "Live im Workshop",
+    "liveText": "Ideen werden am iPad zu Bildern — am echten Ort.",
+    "badgeLabel": "Beteiligung",
+    "badgeText": "Planung · Bildung",
+    "highlights": [
+      {
+        "number": "01",
+        "title": "Am iPad arbeiten",
+        "text": "Intuitiv am Gruppentisch — mobil und gemeinsam."
+      },
+      {
+        "number": "02",
+        "title": "Jung und alt",
+        "text": "Für Schulen, Bürgerwerkstätten und gemischte Gruppen."
+      },
+      {
+        "number": "03",
+        "title": "Bis 30 Personen",
+        "text": "Strukturiert für Workshops bis zu 30 Teilnehmenden."
+      }
+    ]
+  },
+  "features": {
+    "label": "Was Urban Utopia kann",
+    "title": "Alles für einen",
+    "titleAccent": "starken Workshop",
+    "description": "Ein durchdachtes Tool für Lehrende, Verwaltungen, Planungsbüros und Initiativen — von der ersten Idee bis zum Bild, das im Raum hängen bleibt.",
+    "items": [
+      {
+        "title": "KI-Visualisierung",
+        "description": "Wünsche und Skizzen werden zu überzeugenden Bildern — ideal für Präsentationen und Diskussionen."
+      },
+      {
+        "title": "Street View & Upload",
+        "description": "Startet mit einem Foto vom echten Ort oder wählt eine Straßenansicht als Ausgangsbild."
+      },
+      {
+        "title": "Objektbibliothek",
+        "description": "Bäume, Bänke, Fahrradwege und mehr — zum Kombinieren und Verfeinern der Vision."
+      },
+      {
+        "title": "Für Gruppen gemacht",
+        "description": "Am iPad arbeiten — für jung und alt, in Gruppen bis zu 30 Personen. Jede Session speichert Ideen und Ergebnisse."
+      },
+      {
+        "title": "Ortsbezogen",
+        "description": "Workshops drehen sich um echte Räume: Schulweg, Park, Quartier — nicht abstrakte Beispiele."
+      },
+      {
+        "title": "Ergebnisse mitnehmen",
+        "description": "Bilder exportieren und in Berichten, Ausstellungen oder Beteiligungsverfahren weiterverwenden."
+      }
+    ]
+  },
+  "howItWorks": {
+    "label": "Der Ablauf",
+    "title": "Vier Schritte —",
+    "titleAccent": "ein klarer Workshop",
+    "description": "Urban Utopia gibt Struktur, ohne den kreativen Prozess einzuengen. Die Zeiten sind Richtwerte für eine 45–90-minütige Session.",
+    "steps": [
+      {
+        "title": "Ort wählen",
+        "description": "Ein Foto hochladen, Street View nutzen oder ein Bild aus der Workshop-Sammlung — der Ausgangspunkt ist immer der echte Raum.",
+        "duration": "~5 Min."
+      },
+      {
+        "title": "Wünsche sammeln",
+        "description": "In der Gruppe besprechen: Was stört? Was fehlt? Was wünscht sich die Gruppe? Die Ideen werden direkt im Tool festgehalten.",
+        "duration": "~15 Min."
+      },
+      {
+        "title": "Vision generieren",
+        "description": "Mit Objekten, Prompts und KI entsteht eine Visualisierung — sichtbar, diskutierbar, vergleichbar mit dem Ist-Zustand.",
+        "duration": "~20 Min."
+      },
+      {
+        "title": "Teilen & weitergeben",
+        "description": "Ergebnisse präsentieren, feedbacken und als Impuls für Schulentwicklung, Quartiersplanung oder politische Beteiligung nutzen.",
+        "duration": "~15 Min."
+      }
+    ]
+  },
+  "showcase": {
+    "label": "So sieht es aus",
+    "title": "Von der Idee zur",
+    "titleAccent": "Visualisierung",
+    "description": "Keine Stock-Fotos als Behauptung — sondern Beispiele, wie Workshop-Ideen mit Urban Utopia in Vorher-Nachher-Bilder übersetzt werden. Bewegt den Regler, um den Unterschied zu sehen.",
+    "beforeLabel": "Ausgangslage",
+    "afterLabel": "Workshop-Vision",
+    "workshopFormat": "Workshop-Session",
+    "ctaTitle": "Probiert es mit eurer Gruppe aus",
+    "ctaDescription": "Startet direkt in den Workshop-Modus — ohne Setup, ohne Fake-Daten. Euer erster Durchlauf dauert oft weniger als eine Unterrichtsstunde.",
+    "projects": [
+      {
+        "title": "Sicherer Weg durchs Quartier",
+        "description": "Mehr Grün, breitere Gehwege, weniger Autoverkehr — typische Wünsche aus Beteiligungsworkshops.",
+        "focus": "Stadtteilschule Köln Ehrenfeld",
+        "group": "22 Teilnehmende",
+        "format": "42 Ideen"
+      },
+      {
+        "title": "Belebter Nachbarschaftsplatz",
+        "description": "Visualisierung einer gemeinsam entwickelten Idee für einen lebendigen Treffpunkt im Quartier.",
+        "focus": "Gesamtschule Köln Kalk",
+        "group": "18 Teilnehmende",
+        "format": "37 Ideen"
+      },
+      {
+        "title": "Straße für Menschen",
+        "description": "Weniger Asphalt, mehr Bäume und Platz zum Verweilen — gemeinsam neu gedacht in der Gruppe.",
+        "focus": "Gymnasium Köln Rodenkirchen",
+        "group": "26 Teilnehmende",
+        "format": "29 Ideen"
+      },
+      {
+        "title": "Neuer Treffpunkt im Grünen",
+        "description": "Eine ungenutzte Fläche wird zum Ort für Begegnung, Spiel und Aufenthalt im Quartier.",
+        "focus": "Stadt Köln · Lindenthal",
+        "group": "24 Teilnehmende",
+        "format": "35 Ideen"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Stimmen aus der Praxis",
+    "title": "Was Teams an",
+    "titleAccent": "Urban Utopia schätzen",
+    "description": "Anonymisierte Rückmeldungen aus Workshops und Pilotprojekten — ohne erfundene Namen oder Stock-Fotos.",
+    "items": [
+      {
+        "quote": "Endlich sehen Teilnehmende nicht nur, dass sie mitreden dürfen — sondern wie ihre Idee aussehen könnte. Das verändert die Qualität der Diskussion.",
+        "role": "Workshop-Leitung",
+        "context": "Schule & Bildung"
+      },
+      {
+        "quote": "Für uns war entscheidend, dass wir Ergebnisse haben, die wir in Ausstellungen und Rückmeldungen an die Verwaltung zeigen können — ohne aufwendige Nachbearbeitung.",
+        "role": "Beteiligungsbeauftragte",
+        "context": "Kommunale Verwaltung"
+      },
+      {
+        "quote": "Die Technik tritt in den Hintergrund. Die Gruppe bleibt im Fokus — und trotzdem entstehen Bilder, die man ernst nimmt.",
+        "role": "Planungsbüro",
+        "context": "Frühphase & Stakeholder-Workshop"
+      }
+    ]
+  },
+  "useCasesSection": {
+    "label": "Einsatzfelder",
+    "title": "Für Schulen, Kommunen,",
+    "titleAccent": "Planung & mehr",
+    "description": "Urban Utopia passt sich dem Kontext an — ob Unterricht, Bürgerwerkstatt, Studio oder Initiativen-Abend. Jeder Bereich hat eine eigene Seite mit Formaten und Tipps.",
+    "details": "Details",
+    "viewAll": "Alle Einsatzfelder im Überblick"
+  },
+  "useCasesOverview": {
+    "label": "Einsatzfelder",
+    "title": "Urban Utopia für",
+    "titleAccent": "unterschiedliche Kontexte",
+    "description": "Schulen, Verwaltungen, Planungsbüros, Initiativen und Hochschulen — überall dort, wo Menschen gemeinsam über Räume sprechen und Entscheidungen vorbereiten wollen.",
+    "learnMore": "Mehr erfahren",
+    "ctaTitle": "Nicht sicher, welches Format passt?",
+    "ctaDescription": "Startet einen Workshop und probiert den Ablauf aus — oder schreibt uns, wenn ihr Urban Utopia in ein laufendes Verfahren einbinden wollt."
+  },
+  "useCaseDetail": {
+    "backLink": "Alle Einsatzfelder",
+    "forWhom": "Für wen?",
+    "challenges": "Typische Herausforderungen",
+    "benefitsTitle": "Was Urban Utopia hier leistet",
+    "formatsTitle": "Typische Formate",
+    "tipLabel": "Praxis-Tipp",
+    "startWorkshop": "Jetzt ausprobieren",
+    "startWorkshopTitle": "Workshop für {{shortTitle}} starten",
+    "startWorkshopDescription": "Direkt loslegen — ohne Setup. Ergebnisse entstehen in eurer Session, nicht auf dieser Seite.",
+    "moreUseCases": "Weitere Einsatzfelder",
+    "showAll": "Alle anzeigen"
+  },
+  "cta": {
+    "title": "Bereit für euren",
+    "titleAccent": "nächsten Workshop?",
+    "description": "Ob Unterricht, Bürgerwerkstatt oder Planungsreview: Öffnet den Workshop und startet mit einem echten Ort. Bei Fragen zur Einbindung helfen wir gern."
+  },
+  "footer": {
+    "description": "Digitales Workshop-Tool für partizipative Stadtentwicklung — in Bildung, Verwaltung, Planung und Zivilgesellschaft.",
+    "product": "Produkt",
+    "useCases": "Einsatzfelder",
+    "allUseCases": "Alle Einsatzfelder →",
+    "copyright": "© {{year}} Urban Utopia"
+  },
+  "contact": {
+    "title": "Anfrage stellen",
+    "description": "Erzählt uns kurz von eurem Vorhaben — wir helfen bei Fragen zur Einbindung in Workshops, Unterricht oder Beteiligung.",
+    "name": "Name",
+    "email": "E-Mail",
+    "organization": "Organisation",
+    "message": "Nachricht",
+    "namePlaceholder": "Vor- und Nachname",
+    "emailPlaceholder": "name@beispiel.de",
+    "organizationPlaceholder": "Schule, Kommune, Büro …",
+    "messagePlaceholder": "Worum geht es bei eurem Vorhaben?",
+    "submit": "Anfrage senden",
+    "submitting": "Wird gesendet …",
+    "successTitle": "Danke für eure Anfrage!",
+    "successDescription": "Wir haben eure Nachricht erhalten und melden uns so schnell wie möglich bei euch.",
+    "close": "Schließen",
+    "error": "Da ist etwas schiefgelaufen. Bitte versucht es erneut oder schreibt uns direkt an {{email}}.",
+    "orDirect": "Oder direkt:"
+  },
+  "useCases": {
+    "schule": {
+      "title": "Schule & Bildung",
+      "shortTitle": "Schule",
+      "teaser": "Vom Projektunterricht bis zum Projekttag: Lernende visualisieren Räume, an denen sie täglich vorbeikommen.",
+      "tags": ["Sek I & II", "Projekttage", "Demokratiebildung"],
+      "heroTitle": "Räume erforschen, Ideen sichtbar machen",
+      "heroSubtitle": "Urban Utopia eignet sich für Politik, Geographie, Kunst oder interdisziplinäre Projekte — über alle Jahrgangsstufen hinweg.",
+      "audience": [
+        "Lehrkräfte aller Fächer",
+        "Schulsozialarbeit & Ganztag",
+        "Bildung für nachhaltige Entwicklung"
+      ],
+      "challenges": [
+        "Abstrakte Themen wie Stadtplanung wirken oft weit weg vom Alltag der Lernenden.",
+        "Diskussionen bleiben verbal — ohne greifbares Ergebnis am Ende der Stunde.",
+        "Ergebnisse lassen sich schwer präsentieren oder an die Schule weitergeben."
+      ],
+      "benefits": [
+        "Ortsbezogene Aufgaben: Schulhof, Weg zur Schule, Quartier.",
+        "Ergebnisse als Bilder — ideal für Ausstellung, Elternabend oder Schulkonferenz.",
+        "Kein technisches Vorwissen nötig; Moderation bleibt in eurer Hand."
+      ],
+      "scenarios": [
+        {
+          "title": "Politische Bildung",
+          "description": "Demokratie erleben: Wer entscheidet über den öffentlichen Raum — und wie könnte es anders aussehen?"
+        },
+        {
+          "title": "Geographie & Nachhaltigkeit",
+          "description": "Klimagerechte Mobilität, Grünflächen und Aufenthaltsqualität am konkreten Ort diskutieren."
+        },
+        {
+          "title": "Projektwoche",
+          "description": "Mehrere Gruppen entwickeln Visionen für denselben Ort und vergleichen ihre Vorschläge."
+        }
+      ],
+      "workshopTip": "Plant 60–90 Minuten ein. Startet mit einer kurzen Ortsbegehung oder einem Foto — das schafft gemeinsame Ankerpunkte."
+    },
+    "kommunen": {
+      "title": "Kommunen & Verwaltung",
+      "shortTitle": "Kommunen",
+      "teaser": "Bürger:innen, Nachbarschaften und Interessengruppen einbinden — mit Ergebnissen, die in Beteiligungsprozesse passen.",
+      "tags": ["Beteiligung", "Planungsamt", "Quartiersmanagement"],
+      "heroTitle": "Beteiligung, die Bilder liefert",
+      "heroSubtitle": "Für Beteiligungsverfahren, Bürgerwerkstätten und kommunale Workshop-Reihen — von der Ideenfindung bis zur Dokumentation.",
+      "audience": [
+        "Beteiligungsbeauftragte",
+        "Planungs- & Ordnungsämter",
+        "Quartiersmanager:innen"
+      ],
+      "challenges": [
+        "Protokolle und Stimmungsbilder überzeugen Entscheider:innen selten allein.",
+        "Unterschiedliche Altersgruppen und Perspektiven müssen in einem Format zusammenkommen.",
+        "Ergebnisse sollen nachvollziehbar und weiterverwendbar sein."
+      ],
+      "benefits": [
+        "Visualisierungen machen Wünsche vergleichbar — auch für nicht-fachkundige Leser:innen.",
+        "Workshops vor Ort: Marktplatz, Park, Straßenzug als Ausgangsbild.",
+        "Exportierbare Bilder für Berichte, Ausstellungen und Online-Beteiligung."
+      ],
+      "scenarios": [
+        {
+          "title": "Bürgerwerkstatt",
+          "description": "Offenes Format im Stadtteil: Teilnehmende entwickeln gemeinsam Visionen für einen konkreten Planungsraum."
+        },
+        {
+          "title": "Verfahrensbegleitung",
+          "description": "Ergebnisse aus Workshops als Ergänzung zu Online-Beteiligung oder Fachplanung aufbereiten."
+        },
+        {
+          "title": "Jugend- & Seniorenforen",
+          "description": "Verschiedene Generationen am selben Ort — unterschiedliche Prioritäten werden sichtbar."
+        }
+      ],
+      "workshopTip": "Kombiniert Urban Utopia mit klassischer Moderation: erst sammeln, dann visualisieren, dann priorisieren."
+    },
+    "planung": {
+      "title": "Planung & Projektentwicklung",
+      "shortTitle": "Planung",
+      "teaser": "Frühphasen-Workshops, Studio-Reviews und Kundenpräsentationen — wenn schnell verständliche Entwürfe gefragt sind.",
+      "tags": ["Stadtplanung", "Architektur", "Frühphase"],
+      "heroTitle": "Frühe Visionen schnell kommunizieren",
+      "heroSubtitle": "Für Planungsbüros, Architekt:innen und Projektentwickler:innen, die Beteiligung und Entwurfsideen in einem Tool bündeln wollen.",
+      "audience": [
+        "Stadtplaner:innen & Landschaftsarchitekt:innen",
+        "Projektentwicklung & Immobilienwirtschaft",
+        "Workshop-Moderator:innen in Planungsprozessen"
+      ],
+      "challenges": [
+        "In frühen Phasen fehlen oft noch CAD-Visualisierungen — trotzdem braucht es Bilder für Diskussionen.",
+        "Laien und Fachpublikum müssen dieselben Entwürfe verstehen können.",
+        "Iterationen sollen schnell und ohne großen Render-Aufwand möglich sein."
+      ],
+      "benefits": [
+        "Schnelle Varianten aus Fotos, Street View oder Luftperspektive.",
+        "Objektbibliothek für typische Elemente: Grün, Mobilität, Aufenthaltsorte.",
+        "Ergebnisse als Diskussionsgrundlage — nicht als finaler Planungsnachweis."
+      ],
+      "scenarios": [
+        {
+          "title": "Frühphase & Strategie",
+          "description": "Mit Anwohner:innen und Stakeholdern Entwicklungsoptionen für Brachen oder Quartiere erkunden."
+        },
+        {
+          "title": "Studio & Lehre",
+          "description": "Studierende oder Teams vergleichen Entwurfsideen am selben Ausgangsort."
+        },
+        {
+          "title": "Kunden- & Investor:innengespräche",
+          "description": "Szenarien visualisieren, bevor teure Planungsunterlagen entstehen."
+        }
+      ],
+      "workshopTip": "Nutzt Urban Utopia bewusst als Ideen- und Kommunikationstool — nicht als Ersatz für Fachplanung."
+    },
+    "vereine": {
+      "title": "Vereine & Initiativen",
+      "shortTitle": "Vereine",
+      "teaser": "Nachbarschaftsprojekte, Bürgerinitiativen und Kulturformate — wenn Menschen vor Ort etwas verändern wollen.",
+      "tags": ["Initiativen", "Nachbarschaft", "Kultur"],
+      "heroTitle": "Aus Gespräch wird ein Bild",
+      "heroSubtitle": "Für Vereine, Soziokulturelle Zentren und Initiativen, die Räume gemeinsam denken und politisch argumentieren wollen.",
+      "audience": [
+        "Bürgerinitiativen & Nachbarschaftsvereine",
+        "Kultur- & Sozialzentren",
+        "Freiwillige Engagement-Formate"
+      ],
+      "challenges": [
+        "Gute Ideen bleiben oft unsichtbar, wenn nur in Runden gesprochen wird.",
+        "Gegenüber Verwaltung oder Politik fehlt manchmal das überzeugende Bild.",
+        "Ehrenamtliche brauchen einfache Tools ohne lange Einarbeitung."
+      ],
+      "benefits": [
+        "Workshop in einem Nachmittag — auch ohne technisches Know-how.",
+        "Ergebnisse für Petitionen, Anträge, Social Media oder lokale Presse.",
+        "Gruppenarbeit: mehrere Visionen für denselben Ort vergleichen."
+      ],
+      "scenarios": [
+        {
+          "title": "Nachbarschaftsfest & Workshop",
+          "description": "Vor Ort Ideen sammeln und direkt visualisieren — als Highlight des Formats."
+        },
+        {
+          "title": "Initiativen-Abend",
+          "description": "Geplante Veränderungen (Grün, Verkehr, Begegnungsorte) für Entscheidungsträger aufbereiten."
+        },
+        {
+          "title": "Kulturprojekte",
+          "description": "Künstlerische und partizipative Formate verbinden — Raum als gemeinsames Thema."
+        }
+      ],
+      "workshopTip": "Ladet unterschiedliche Perspektiven ein. Unterschiedliche Bilder zum selben Ort öffnen oft den produktivsten Dialog."
+    },
+    "hochschule": {
+      "title": "Hochschule & Forschung",
+      "shortTitle": "Hochschule",
+      "teaser": "Seminare, Studios und Forschungsprojekte zu Stadt, Klima und Transformation — mit reproduzierbaren Workshop-Setups.",
+      "tags": ["Studio", "Seminar", "Transdisziplinär"],
+      "heroTitle": "Lehre und Forschung mit Praxisbezug",
+      "heroSubtitle": "Urban Utopia unterstützt partizipative Formate in der Hochschule — von der Exkursion bis zum transdisziplinären Projekt.",
+      "audience": [
+        "Lehrende in Planung, Geographie, Sozialwissenschaften",
+        "Forschungsprojekte mit Praxispartner:innen",
+        "Studierenden-Workshops & Studios"
+      ],
+      "challenges": [
+        "Partizipation in der Lehre braucht Formate, die in ein Semester passen.",
+        "Ergebnisse sollen wissenschaftlich und kommunikativ nutzbar sein.",
+        "Verschiedene Disziplinen sprechen selten dieselbe visuelle Sprache."
+      ],
+      "benefits": [
+        "Reproduzierbarer Ablauf für Seminare und mehrtägige Workshops.",
+        "Dokumentation von Gruppenergebnissen für Berichte und Poster.",
+        "Brücke zwischen Theorie und konkretem urbanen Raum."
+      ],
+      "scenarios": [
+        {
+          "title": "Seminar & Exkursion",
+          "description": "Vor-Ort-Analyse mit anschließender Visualisierung im Hörsaal oder Studio."
+        },
+        {
+          "title": "Transdisziplinäres Projekt",
+          "description": "Studierende, Praxis und Zivilgesellschaft entwickeln gemeinsam Szenarien."
+        },
+        {
+          "title": "Forschungskommunikation",
+          "description": "Ergebnisse für Öffentlichkeit, Kommune oder Fördergeber aufbereiten."
+        }
+      ],
+      "workshopTip": "Definiert zu Beginn den Untersuchungsort und die Forschungsfrage — Urban Utopia strukturiert den kreativen Teil."
+    }
+  }
+}

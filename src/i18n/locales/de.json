@@ -1,0 +1,291 @@
+{
+  "menu": {
+    "contact": "Kontakt",
+    "about": "Über uns",
+    "giveFeedback": "Feedback geben",
+    "logout": "Abmelden",
+    "imprint": "Impressum",
+    "dataPrivacy": "Datenschutz"
+  },
+  "errors": {
+    "tryAgainLater": "Ein Fehler ist aufgetreten, bitte versuchen Sie es später erneut oder kontaktieren Sie uns.",
+    "opencvLoadFailed": "OpenCV konnte nicht geladen werden. Neuer Versuch..."
+  },
+  "loading": {
+    "opencvInitialized": "OpenCV vollständig initialisiert"
+  },
+  "iframe": {
+    "feedbackTitle": "Info"
+  },
+  "aiGenerator": {
+    "title": "Was wünschst du dir hier?",
+    "models": {
+      "pedestrianZone": "Fußgängerzone",
+      "cafe": "Café",
+      "tree": "Baum",
+      "bicycleLane": "Fahrradweg",
+      "pond": "Teich",
+      "urbanWaterfall": "Urbaner Wasserfall",
+      "stonePath": "Steinweg",
+      "meadow": "Wiese",
+      "modernBench": "Moderne Bank",
+      "fleaMarket": "Flohmarkt",
+      "tram": "Straßenbahn",
+      "solarPanels": "Solarmodule",
+      "playground": "Spielplatz",
+      "removeCars": "Autos entfernen",
+      "pedestrian": "Fußgänger",
+      "cyclist": "Radfahrer",
+      "children": "Kinder"
+    },
+    "progress": {
+      "steps": {
+        "location": "Standort",
+        "idea": "Idee",
+        "area": "Bereich"
+      }
+    },
+    "ideaInput": {
+      "examples": {
+        "bench": "Moderne Holzbank",
+        "landscaping": "Landschaftsgestaltung"
+      },
+      "placeholder": "Gib deine Idee ein..."
+    },
+    "accessVerification": {
+      "title": "Anmelden",
+      "subtitle": "Verwende deinen persönlichen Code zur Anmeldung",
+      "inputPlaceholder": "Login-Code eingeben",
+      "verifyButton": "Zugang prüfen",
+      "or": "oder",
+      "waitlist": {
+        "success": "Super, bleib dran!",
+        "joinTitle": "Der Warteliste beitreten",
+        "joinSubtitle": "Erhalte frühen Zugang zu Urban Utopia AI",
+        "emailPlaceholder": "E-Mail eingeben",
+        "joinButton": "Warteliste beitreten"
+      }
+    },
+    "library": {
+      "title": "Bibliothek",
+      "noResults": "Keine Ergebnisse gefunden",
+      "loading": "Bibliothek wird geladen..."
+    },
+    "imageResponse": {
+      "generating": "Dein Bild wird generiert...",
+      "download": "Herunterladen",
+      "regenerate": "Neu generieren",
+      "share": "Teilen",
+      "back": "Zurück",
+      "retry": "Wiederholen",
+      "continueEdit": "Dieses Bild weiter bearbeiten",
+      "image": "Bild",
+      "firstImage": "Dies ist bereits das erste Bild",
+      "lastImage": "Dies ist bereits das letzte Bild"
+    },
+    "intro": {
+      "title": "Erstelle deine eigene Utopie!",
+      "subtitle": "Mit diesem KI-Tool kannst du Bilder ganz einfach so verändern, wie du es dir wünschst.",
+      "readyTitle": "Bereit? Dann folge diesen Schritten:",
+      "mobileText": "Die App ist derzeit nur für Desktop verfügbar. Bitte öffne die App auf einem Computer.",
+      "steps": {
+        "1": "Such dir ein Startbild aus.",
+        "2": "Wähle, welches neue Objekt du sehen möchtest.",
+        "3": "Male oder markiere den Bereich, in dem das Objekt erscheinen soll."
+      }
+    },
+    "imageSelection": {
+      "title": "Wähle ein Ausgangsbild",
+      "subtitle": "Nutze Streetview, um den gewünschten Ort zu finden oder lade ein Foto hoch.",
+      "uploadButton": "Bild hochladen",
+      "or": "oder",
+      "searchPlaceholder": "Ort suchen"
+    },
+    "objectSelection": {
+      "title": "Was wünschst du dir hier?",
+      "subtitle": "Wähle ein oder mehrere Objekte aus der Bibliothek aus oder beschreibe deine individuelle Idee.",
+      "or": "oder"
+    },
+    "drawingArea": {
+      "title": "Zeichne den Bereich",
+      "subtitle": "Definiere den Ort, an dem das Objekt \"{{object}}\" visualisiert werden soll.",
+      "tips": {
+        "title": "Tipps:",
+        "tip1": "Schließe immer die Zeichenlinien",
+        "tip1Error": "Lasse die Zeichenlinie nicht am Rand offen",
+        "tip2": "Berücksichtige die drei Dimensionen des Objekts",
+        "tip2Error": "Platziere das Objekt nicht in einem zu engen Raum."
+      }
+    },
+    "buttons": {
+      "history": "Verlauf",
+      "deleteMask": "Maske löschen",
+      "eraser": "Radierer",
+      "draw": "Zeichnen",
+      "start": "Start",
+      "next": "Weiter",
+      "generateImage": "Bild generieren",
+      "back": "Zurück"
+    },
+    "mobileNotice": "Diese App ist derzeit nur für Desktop verfügbar",
+    "credits": "{{remaining}} / {{total}} Credits",
+    "errors": {
+      "noCredits": "Deine Credits sind aufgebraucht. Du möchtest mehr? Kontaktiere uns!",
+      "noArea": "Du musst einen Umrissbereich in das Bild zeichnen",
+      "noObject": "Bitte wähle ein Objekt aus"
+    }
+  },
+  "startImage": {
+    "title": "Wähle das Ausgangsbild für deine Utopie",
+    "existing": {
+      "title": "Vorhandenes Bild auswählen",
+      "description": "Wähle aus einem vorhandenen Bild"
+    },
+    "streetview": {
+      "title": "Bild mit Street View aufnehmen",
+      "description": "Suche und erfasse einen Ort über Street View",
+      "placeholder": "Ort suchen"
+    },
+    "upload": {
+      "title": "Eigenes Bild hochladen",
+      "description": "Lade dein eigenes Foto hoch, um zu starten"
+    },
+    "library": {
+      "title": "Wähle ein Bild",
+      "loading": "Bibliothek wird geladen...",
+      "noCaption": "Ohne Titel",
+      "noImages": "Keine Bilder gefunden"
+    },
+    "errors": {
+      "failedLoadSession": "Fehler beim Laden der Sitzung. Bitte versuchen Sie es erneut.",
+      "failedProcessImage": "Fehler beim Verarbeiten des Bildes. Bitte versuchen Sie es erneut."
+    }
+  },
+  "streetview": {
+    "pageTitle": "Wähle einen Ort",
+    "title": "Wo möchtest du eine Utopie erstellen?",
+    "placeholder": "Ort suchen",
+    "loadError": "Street View konnte nicht geladen werden.",
+    "contentBlockerHint": "Deaktiviere Ad-Blocker oder Tracking-Schutz für diese Seite und lade sie neu. Google Maps benötigt Zugriff auf maps.googleapis.com und lh3.ggpht.com."
+  },
+  "languages": {
+    "de": {
+      "name": "Deutsch",
+      "nativeName": "Deutsch"
+    },
+    "en": {
+      "name": "Englisch",
+      "nativeName": "English"
+    }
+  },
+  "util": {
+    "adjust": "{{val}} anpassen"
+  },
+  "global": {
+    "language": "Sprache"
+  },
+  "aiImageGenerator": {
+    "errors": {
+      "failedSaveImage": "Fehler beim Speichern des Bildes. Bitte versuchen Sie es erneut.",
+      "generalError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "failedProcessImage": "Fehler beim Verarbeiten des Bildes. Bitte versuchen Sie es erneut.",
+      "failedGenerateImageAfterRetry": "Fehler beim Generieren des Bildes nach Wiederholung. Bitte versuchen Sie es später erneut.",
+      "failedGenerateImage": "Fehler beim Generieren des Bildes. Bitte versuchen Sie es später erneut."
+    },
+    "accessVerification": {
+      "incorrectId": "Falsche ID. Zugriff verweigert."
+    }
+  },
+  "admin": {
+    "errors": {
+      "failedImportJson": "Fehler beim Importieren der JSON-Datei. Bitte überprüfen Sie das Dateiformat."
+    },
+    "pages": {
+      "adminPage": {
+        "title": "Alle Organisationen",
+        "createButton": "Neue Organisation",
+        "noSessions": "Keine Sitzungen vorhanden. Erstelle deine erste Sitzung!",
+        "organizationNotFound": "Organisation nicht gefunden"
+      },
+      "organizationModal": {
+        "title": "Organisation erstellen",
+        "label": "Organisationsname",
+        "placeholder": "Geben Sie den Organisationsnamen ein",
+        "cancelButton": "Abbrechen",
+        "createButton": "Erstellen",
+        "creatingButton": "Wird erstellt..."
+      },
+      "projectsPage": {
+        "title": "Deine Sitzungen",
+        "createButton": "Neue Sitzung",
+        "noSessions": "Keine Sitzungen vorhanden. Erstelle deine erste Sitzung!"
+      },
+      "projectModal": {
+        "title": "Projekt erstellen",
+        "label": "Projektname",
+        "placeholder": "Geben Sie den Projektnamen ein",
+        "cancelButton": "Abbrechen",
+        "createButton": "Erstellen",
+        "creatingButton": "Wird erstellt..."
+      },
+      "projectsPageButtons": {
+        "editButton": "Bearbeiten",
+        "resultsButton": "Ergebnisse",
+        "inviteButton": "Einladen"
+      },
+      "inviteModal": {
+        "title": "Einladungslink für {{projectName}}",
+        "linkLabel": "Einladungslink:",
+        "qrCodeLabel": "QR-Code",
+        "downloadButton": "QR-Code herunterladen",
+        "copyButton": "Kopieren",
+        "copiedButton": "Kopiert",
+        "generatingQR": "QR-Code wird generiert...",
+        "shareText": "Teilen Sie diesen Link oder scannen Sie den QR-Code, um andere einzuladen {{projectName}} beizutreten."
+      },
+      "projectPage": {
+        "title": "Sitzung bearbeiten",
+        "titleInputPlaceholder": "Titel eingeben...",
+        "uploadLabel": "Bild-Upload durch Teilnehmende",
+        "streetViewLabel": "Google Street View",
+        "uploading": "Wird hochgeladen...",
+        "uploadButton": "Klicken Sie hier, um Bilder hochzuladen",
+        "imageCaption": "Bildtitel...",
+        "notFound": "Projekt nicht gefunden",
+        "deleteTitle": "Projekt löschen",
+        "deleteDescription": "Sind Sie sicher, dass Sie dieses Projekt löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+        "deleteButton": "Löschen",
+        "editButton": "Bearbeiten",
+        "saveButton": "Speichern",
+        "cancelButton": "Abbrechen"
+      },
+      "resultsPage": {
+        "title": "Erstellte Bilder",
+        "imageCount": "{{count}} Bilder erstellt",
+        "loading": "Lädt...",
+        "noImages": "Noch keine Bilder erstellt...",
+        "originalImage": "Originalbild",
+        "notAvailable": "Nicht verfügbar",
+        "play": "Abspielen",
+        "stop": "Stopp",
+        "continue": "Fortsetzen",
+        "downloadTitle": "Herunterladen",
+        "previousTitle": "Vorheriges Bild",
+        "nextTitle": "Nächstes Bild"
+      },
+      "components": {
+        "titleEditor": {
+          "editButton": "Bearbeiten",
+          "saveButton": "Speichern",
+          "cancelButton": "Abbrechen"
+        },
+        "inviteLinkModal": {
+          "title": "Einladungslink & QR-Code",
+          "linkLabel": "Einladungslink",
+          "qrCodeLabel": "QR-Code",
+          "downloadButton": "QR-Code herunterladen"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,222 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Production builds
+build/
+dist/
+out/
+.next/
+dev-dist/
+
+# Turborepo cache
+.turbo/
+
+# Cursor
+.cursor/
+!.cursor/mcp.json
+
+# Generated CSS files
+**/tailwind.css
+
+# Compiled Cloud Functions output (legacy)
+cloudFunctions/functions/lib/
+
+# Production builds (may contain embedded env at build time)
+apps/*/dist/
+
+# Environment variables (SECURITY CRITICAL)
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+.env.staging.local
+.env.*
+cloudFunctions/functions/env.*
+
+# Supabase CLI local cache (legacy)
+supabase/.temp/
+
+# Firebase → Supabase migration data (supabase/migration-data/)
+supabase/migration-data/credentials/*
+!supabase/migration-data/credentials/.gitignore
+!supabase/migration-data/credentials/README.md
+!supabase/migration-data/credentials/*.example.json
+supabase/migration-data/exports/**
+!supabase/migration-data/exports/.gitignore
+!supabase/migration-data/exports/.gitkeep
+supabase/migration-data/.env
+supabase/migration-data/.env.*
+!supabase/migration-data/.env.example
+!supabase/migration-data/.env.*.encrypted
+supabase/migration-data/ssh-tunnel.json
+!supabase/migration-data/ssh-tunnel.example.json
+supabase/migration-data/logs/
+supabase/migration-data/migration-runs.json
+supabase/migration-data/mirror-runs.json
+supabase/migration-data/.migration-config-*.json
+supabase/migration-data/reports/
+
+# Local infra monitoring history (generated at runtime)
+deploy/data/
+
+# Deploy infrastructure (generated secrets)
+deploy/env/generated/*
+!deploy/env/generated/*.encrypted
+deploy/env/generated/mail-*.env
+deploy/env/.env.coolify.local
+!deploy/env/.env.coolify.local.encrypted
+deploy/ssh-guard.local.json
+deploy/mail/.env
+deploy/mail/.dkim-cache/
+deploy/infra.local.json
+cloudFunctions/functions/.env
+cloudFunctions/functions/.env.senf-prod
+!cloudFunctions/functions/.env.encrypted
+!cloudFunctions/functions/.env.senf-prod.encrypted
+
+# Firestore / Auth export JSON (PII — may be written under migration-data or import cwd)
+**/organizations-export-*.json
+**/firestore-users-export-*.json
+**/firebase-auth-users-export-*.json
+**/surveys-export-*.json
+**/survey-entries-export-*.json
+**/survey-subcollections-export-*.json
+users.json
+supabase/import/auth/firebase-scrypt-params.json
+
+# Firebase credentials and service accounts (SECURITY CRITICAL)
+serviceAccount*.json
+firebase-key*.json
+*-firebase-adminsdk-*.json
+imgproxy-gcs-key.json
+firebase-debug.log
+firebase-debug.*.log
+
+# API keys and secrets (SECURITY CRITICAL)
+*.key
+*.pem
+secrets/
+# Do not use bare `credentials/` — it blocks supabase/migration-data/credentials/*.example.json
+.secrets/
+.credentials/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output/
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# Storybook build outputs
+storybook-static/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache/
+.parcel-cache/
+
+# Temporary folders
+tmp/
+temp/
+
+# Generated files
+meta.json
+public/meta.json
+
+# Firebase
+.firebase/
+.firebaserc
+firebase.json
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Local development database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+apps/utopia/.env
+apps/utopia/.env.prod
+apps/utopia/.env.local
+!apps/utopia/.env.example
+# Optional local workshop access list (may contain participant data)
+apps/utopia/src/aiImageGenerator/helpers/ids.local.ts
+# Local sales/outreach materials (pitch decks, PDFs, downloaded assets)
+docs/outreach/
+
+# Local Netlify folder
+.netlify
