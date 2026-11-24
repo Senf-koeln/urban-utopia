@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import {
   Button,
   Input,
-  List,
   ObjectCard,
   useIsMobile,
 } from "@ui";
@@ -165,21 +164,23 @@ const ObjectSelectionSection: React.FC<ObjectSelectionSectionProps> = ({
               {category}
             </h3>
             {!isMobile && (
-              <List
-                CardType={ObjectCard as any}
-                data={categoryModels.map((model) => ({
-                  id: model.id,
-                  title: model.title[currentLanguage],
-                  prompt: model.prompt,
-                  keywords: model.keywords[currentLanguage],
-                  imgURL: model.imgURL,
-                  category: model.category,
-                }))}
-                selected={selectedObjects.map((obj) => obj.id)}
-                onClick={handleObjectClick}
-                listType="grid"
-                multiSelect={true}
-              />
+              <div>
+                {categoryModels.map((model) => (
+                  <ObjectCard
+                    key={model.id}
+                    data={{
+                      id: model.id,
+                      title: model.title[currentLanguage],
+                      prompt: model.prompt,
+                      keywords: model.keywords[currentLanguage],
+                      imgURL: model.imgURL,
+                      category: model.category,
+                    }}
+                    selected={selectedObjects.map((obj) => obj.id)}
+                    onClick={handleObjectClick}
+                  />
+                ))}
+              </div>
             )}
 
             {isMobile && (

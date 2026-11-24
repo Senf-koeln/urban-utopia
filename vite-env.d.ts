@@ -11,6 +11,4 @@ interface ImportMetaEnv {
   readonly VITE_FIREBASE_STORAGEBUCKET?: string;
   readonly VITE_MAPBOX_ACCESS_TOKEN?: string;
   readonly VITE_GOOGLE_STREETVIEW_API_KEY?: string;
-  readonly VITE_GETIMG_ACCESS_KEY?: string;
-  readonly VITE_GEOAPIFY_API_KEY?: string;
 }

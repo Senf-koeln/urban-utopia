@@ -100,6 +100,8 @@ const ObjectCard: FC<ObjectCardProps> = ({
               className={ImageWrapper()}
               src={data?.imgURL}
               alt={data?.title || "Object image"}
+              loading="lazy"
+              decoding="async"
             />
           ) : (
             <div className={ImageWrapper()}>
