@@ -10,7 +10,7 @@
     "dev:ngrok": "VITE_ENABLE_NGROK=true yarn dev",
     "server:dev": "tsx watch server/src/index.ts",
     "server:build": "node server/build.mjs",
-    "tokens:build": "npm run build --prefix tokens",
+    "tokens:build": "cd tokens && ../node_modules/.bin/tailwindcss -i ./styles.css -o ./tailwind.css --postcss ./postcss.config.cjs --minify",
     "tokens:dev": "npm run dev --prefix tokens",
     "build": "yarn tokens:build && yarn build:web && yarn server:build",
     "vite:build": "NODE_OPTIONS=--max-old-space-size=8192 node ./node_modules/vite/bin/vite.js build",

@@ -185,12 +185,12 @@ module.exports = {
         '@property --pulse-color': {
           syntax: '"<color>"',
           inherits: 'false',
-          'initial-value': 'var(--palette-blue-900)',
+          'initial-value': '#4964c9',
         },
         '@property --pulse-bg-color': {
           syntax: '"<color>"',
           inherits: 'false',
-          'initial-value': 'var(--palette-purple-100)',
+          'initial-value': '#faf6ff',
         },
       });
     },
@@ -203,7 +203,7 @@ module.exports = {
     ({ addVariant }) => {
       addVariant(
         "touch-any",
-        "@media (hover: hover) and (pointer: fine), @media (pointer: coarse) { & }",
+        "@media (hover: hover) and (pointer: fine), (pointer: coarse) { & }",
       );
     },
   ],
