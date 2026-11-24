@@ -1,3 +1,5 @@
+import { getCloudFunctionUrl } from "./firebase";
+
 type GeminiRequestProps = {
   body: string;
   assistantId: string;
@@ -26,7 +28,7 @@ export const geminiRequest = async ({
   try {
     const finalImages = images || (image ? [image] : undefined);
 
-    const response = await fetch("/api/gemini", {
+    const response = await fetch(getCloudFunctionUrl("gemini"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

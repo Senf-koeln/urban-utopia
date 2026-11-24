@@ -192,6 +192,8 @@ public/meta.json
 .firebase/
 .firebaserc
 firebase.json
+!cloudFunctions/.firebaserc
+!cloudFunctions/firebase.json
 
 # Terraform
 *.tfstate

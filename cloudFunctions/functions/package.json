@@ -1,0 +1,27 @@
+{
+  "name": "utopia-functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions --project=urban-utopia-bc48d",
+    "logs": "firebase functions:log --project=urban-utopia-bc48d"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "@google/genai": "^1.50.1",
+    "cors": "^2.8.5",
+    "firebase-functions": "^6.5.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20.6.2",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}

@@ -24,6 +24,7 @@
     "typecheck": "tsc --noEmit",
     "secrets:encrypt": "node scripts/dotenvx-secrets.cjs encrypt --all",
     "secrets:decrypt": "node scripts/dotenvx-secrets.cjs decrypt --all",
+    "deploy:functions": "firebase deploy --config cloudFunctions/firebase.json --project=urban-utopia-bc48d --only functions",
     "clean": "npx --yes del-cli node_modules dist server/dist .turbo --force"
   },
   "dependencies": {

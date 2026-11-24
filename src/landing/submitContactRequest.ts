@@ -1,3 +1,5 @@
+import { getCloudFunctionUrl } from "../lib/firebase";
+
 export type ContactRequestPayload = {
   name: string;
   email: string;
@@ -9,7 +11,7 @@ export type ContactRequestPayload = {
 export async function notifyContactRequestSlack(
   payload: ContactRequestPayload,
 ): Promise<void> {
-  const response = await fetch("/api/contact", {
+  const response = await fetch(getCloudFunctionUrl("onUtopiaContactRequest"), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),

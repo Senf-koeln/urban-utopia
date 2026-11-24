@@ -1,0 +1,8 @@
+# Firebase-specific patterns (common patterns handled by root .gitignore)
+
+# Firebase cache
+.firebase/
+
+# Firebase logs
+firebase-debug.log*
+firebase-debug.*.log*
