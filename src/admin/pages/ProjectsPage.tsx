@@ -287,7 +287,7 @@ const ProjectsPage: React.FC = () => {
               projects.map((project) => (
                 <div
                   key={project.id}
-                  className="flex items-center justify-between rounded-2xl border-2 border-gray-900 bg-white p-6 transition-all"
+                  className="flex cursor-pointer items-center justify-between rounded-2xl border-2 border-gray-900 bg-white p-6 transition-all"
                 >
                   <div className="flex flex-1 items-start gap-6">
                     {/* Logo/Avatar */}
